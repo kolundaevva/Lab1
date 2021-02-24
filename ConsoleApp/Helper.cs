@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Schema;
+using Classes;
 using Classes.Exceptions;
 
 namespace ConsoleApp
@@ -45,6 +46,79 @@ namespace ConsoleApp
             var dateTime = new DateTime(year, month, day);
 
             return dateTime;
+        }
+
+        public static void carCreat()
+        {
+            Console.WriteLine("Введите название транспорта:");
+            var name = Helper.StringInput();
+            Console.WriteLine("Введите дату создания автомобиля:");
+            var date = Helper.DateTimeInput();
+            Console.WriteLine("Введите мощность двигателя:");
+            var enginePower = Helper.InputInRange(1, 1200);
+            Console.WriteLine("Введите количество посадочных мест:");
+            var seatsNumber = Helper.InputInRange(2, 8);
+            Console.WriteLine("Введите тип кузова:");
+            var bodyType = Helper.StringInput();
+            Console.WriteLine("Введите тип трансмиссии:");
+            var transmission = Helper.StringInput();
+            Console.WriteLine("Введите цвет авто:");
+            var color = Helper.StringInput();
+            Console.WriteLine("Введите VIN авто:");
+            var vin = Helper.StringInput();
+
+            Car newCar = new Car(date, name, enginePower,
+                seatsNumber, vin, color, 
+                bodyType, transmission);
+        }
+
+        public static void trainCreat()
+        {
+            Console.WriteLine("Введите название транспорта:");
+            var trainName = Helper.StringInput();
+            Console.WriteLine("Введите дату создания поезда:");
+            var date = Helper.DateTimeInput();
+            Console.WriteLine("Введите мощность двигателя:");
+            var enginePower = Helper.InputInRange(1, 12000);
+            Console.WriteLine("Введите количество посадочных мест:");
+            var seatsNumber = Helper.InputInRange(1, 1000);;
+            Console.WriteLine("Введите тип поезда:");
+            var type = Helper.StringInput();
+            Console.WriteLine("Введите количество вагонов:");
+            var wagonCount = Helper.InputInRange(1, 100);;
+            Console.WriteLine("Введите VIN авто:");
+            var vin = Helper.StringInput();
+
+            Train newTrain = new Train(date, trainName, enginePower,
+                seatsNumber, vin, type, wagonCount);
+        }
+
+        public static void expressCreat()
+        {
+            Console.WriteLine("Введите название транспорта:");
+            var expressName = Helper.StringInput();
+            Console.WriteLine("Введите дату создания поезда:");
+            var date = Helper.DateTimeInput();
+            Console.WriteLine("Введите мощность двигателя:");
+            var enginePower = Helper.InputInRange(1, 12000);
+            Console.WriteLine("Введите количество посадочных мест:");
+            var seatsNumber = Helper.InputInRange(1, 1000);;
+            Console.WriteLine("Введите тип поезда:");
+            var type = Helper.StringInput();
+            Console.WriteLine("Введите количество вагонов:");
+            var wagonCount = Helper.InputInRange(1, 100);;
+            Console.WriteLine("Введите начальную точку маршрута:");
+            var startPoint = Helper.StringInput();
+            Console.WriteLine("Введите конечную точку маршрута:");
+            var endPoint = Helper.StringInput();
+            Console.WriteLine("Введите количество остановок:");
+            var stopAmount = Helper.InputInRange(1, 50);
+            Console.WriteLine("Введите VIN авто:");
+            var vin = Helper.StringInput();
+
+            Express newExpress = new Express(date, expressName, enginePower,
+                seatsNumber, vin, type, wagonCount,
+                startPoint, endPoint, stopAmount);
         }
     }
 }
