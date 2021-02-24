@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Classes;
 using Classes.Exceptions;
 
@@ -8,38 +9,49 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            Console.Clear();
-            Console.WriteLine("Выберите действие:");
-            Console.WriteLine("1. Добавить автомобиль.");
-            Console.WriteLine("2. Добавить поезд");
-            Console.WriteLine("3. Добавить экспресс");
-            Console.WriteLine("4. Найти транспорт по VIN");
-            Console.WriteLine("5. Выйти из программы");
-
-            try
+            List<Vehicle> list = new List<Vehicle>();
+            while (true)
             {
-                switch (Console.ReadLine())
+                Console.Clear();
+                Console.WriteLine("Выберите действие:");
+                Console.WriteLine("1. Добавить автомобиль.");
+                Console.WriteLine("2. Добавить поезд");
+                Console.WriteLine("3. Добавить экспресс");
+                Console.WriteLine("4. Найти транспорт по VIN");
+                Console.WriteLine("5. Выйти из программы");
+
+                try
                 {
-                    case "1":
-                        Helper.carCreat();
-                        break;
-                    case "2":
-                        Helper.trainCreat();
-                        break;
-                    case "3":
-                        Helper.expressCreat();
-                        break;
-                    case "4":
-                        break;
-                    case "5":
-                        break;
+
+                    switch (Console.ReadLine())
+                    {
+                        case "1":
+                            var car = Helper.carCreate();
+                            list.Add(car);
+                            break;
+                        case "2":
+                            var train = Helper.trainCreate();
+                            list.Add(train);
+                            break;
+                        case "3":
+                            var express = Helper.expressCreate();
+                            list.Add(express);
+                            break;
+                        case "4":
+                            var vin = Console.ReadLine();
+                            var result = list.Find(item => item.VIN == vin);
+                            Console.WriteLine(result.ToString());
+                            Console.ReadLine();
+                            break;
+                        case "5":
+                            return;
+                    }
+                }
+                catch (InvalidInputException f)
+                {
+                    Console.WriteLine(f.Message);
                 }
             }
-            catch(InvalidInputException f)
-            {
-                Console.WriteLine(f.Message);
-            }
-            
         }
     }
 }

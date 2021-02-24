@@ -10,7 +10,7 @@ namespace ConsoleApp
         private static int InputInRange(int start, int end)
         {
             int value = IntInput();
-            if (value < end || value > start)
+            if (value < start || value > end)
             {
                 throw new InvalidInputException($"Число должно быть между {start} и {end}");
             }
@@ -48,7 +48,7 @@ namespace ConsoleApp
             return dateTime;
         }
 
-        public static void carCreat()
+        public static Car carCreate()
         {
             Console.WriteLine("Введите название транспорта:");
             var name = Helper.StringInput();
@@ -67,12 +67,12 @@ namespace ConsoleApp
             Console.WriteLine("Введите VIN авто:");
             var vin = Helper.StringInput();
 
-            Car newCar = new Car(date, name, enginePower,
+            return new Car(date, name, enginePower,
                 seatsNumber, vin, color, 
                 bodyType, transmission);
         }
 
-        public static void trainCreat()
+        public static Train trainCreate()
         {
             Console.WriteLine("Введите название транспорта:");
             var trainName = Helper.StringInput();
@@ -89,11 +89,11 @@ namespace ConsoleApp
             Console.WriteLine("Введите VIN авто:");
             var vin = Helper.StringInput();
 
-            Train newTrain = new Train(date, trainName, enginePower,
+            return new Train(date, trainName, enginePower,
                 seatsNumber, vin, type, wagonCount);
         }
 
-        public static void expressCreat()
+        public static Express expressCreate()
         {
             Console.WriteLine("Введите название транспорта:");
             var expressName = Helper.StringInput();
@@ -116,7 +116,7 @@ namespace ConsoleApp
             Console.WriteLine("Введите VIN авто:");
             var vin = Helper.StringInput();
 
-            Express newExpress = new Express(date, expressName, enginePower,
+            return new Express(date, expressName, enginePower,
                 seatsNumber, vin, type, wagonCount,
                 startPoint, endPoint, stopAmount);
         }
