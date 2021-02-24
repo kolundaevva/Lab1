@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{8CEEA0D1-209B-4E4B-98BC-9D8B7E1AC488}</ProjectGuid>
-        <OutputType>Library</OutputType>
+        <ProjectGuid>{96A6C173-2A5E-4956-A145-4014E7340FEE}</ProjectGuid>
+        <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Classes</RootNamespace>
-        <AssemblyName>Classes</AssemblyName>
+        <RootNamespace>ConsoleApp</RootNamespace>
+        <AssemblyName>ConsoleApp</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -38,12 +38,15 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Car.cs" />
-        <Compile Include="Exceptions\InvalidInputException.cs" />
-        <Compile Include="Express.cs" />
-        <Compile Include="Train.cs" />
-        <Compile Include="Vehicle.cs" />
+        <Compile Include="Helper.cs" />
+        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Classes\Classes.csproj">
+        <Project>{8ceea0d1-209b-4e4b-98bc-9d8b7e1ac488}</Project>
+        <Name>Classes</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
