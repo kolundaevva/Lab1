@@ -22,7 +22,8 @@ namespace ConsoleApp
             {
                 return number;
             }
-            throw new InvalidInputException("Вы ввели не целое число.")
+
+            throw new InvalidInputException("Вы ввели не целое число.");
         }
 
         public static string StringInput()
