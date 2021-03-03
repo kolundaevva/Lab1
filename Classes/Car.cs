@@ -23,7 +23,7 @@ namespace Classes
             BodyType = bodyType;
             Transmission = transmission;
         }
-
+        
         public override string ToString()
         {
             return base.ToString() + 

@@ -85,12 +85,14 @@ namespace ConsoleApp
             Console.WriteLine("Введите тип поезда:");
             var type = Helper.StringInput();
             Console.WriteLine("Введите количество вагонов:");
-            var wagonCount = Helper.InputInRange(1, 100);;
+            var wagonCount = Helper.InputInRange(1, 100);
+            Console.WriteLine("Введите количество вагонов:");
+            var fare = Helper.InputInRange(0, 20000);
             Console.WriteLine("Введите VIN авто:");
             var vin = Helper.StringInput();
 
             return new Train(date, trainName, enginePower,
-                seatsNumber, vin, type, wagonCount);
+                seatsNumber, vin, type, wagonCount, fare);
         }
 
         public static Express expressCreate()
@@ -106,7 +108,9 @@ namespace ConsoleApp
             Console.WriteLine("Введите тип поезда:");
             var type = Helper.StringInput();
             Console.WriteLine("Введите количество вагонов:");
-            var wagonCount = Helper.InputInRange(1, 100);;
+            var wagonCount = Helper.InputInRange(1, 100);
+            Console.WriteLine("Введите количество вагонов:");
+            var fare = Helper.InputInRange(0, 20000);
             Console.WriteLine("Введите начальную точку маршрута:");
             var startPoint = Helper.StringInput();
             Console.WriteLine("Введите конечную точку маршрута:");
@@ -118,7 +122,7 @@ namespace ConsoleApp
 
             return new Express(date, expressName, enginePower,
                 seatsNumber, vin, type, wagonCount,
-                startPoint, endPoint, stopAmount);
+                fare, startPoint, endPoint,stopAmount);
         }
     }
 }
