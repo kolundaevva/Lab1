@@ -4,9 +4,9 @@ namespace Classes
 {
     public class Express : Train
     {
-        public string StartPoint { get; set; }
-        public string EndPoint { get; set; }
-        public int StopAmount { get; set; }
+        public string StartPoint;
+        public string EndPoint;
+        public int StopAmount;
 
         public Express(
             DateTime createdAt,
@@ -26,6 +26,30 @@ namespace Classes
             StopAmount = stopAmount;
         }
 
+        public void setStartPoint(string startPoint)
+        {
+            StartPoint = startPoint;
+        }
+        public string getStartPoint()
+        {
+            return StartPoint;
+        }
+        public void setEndPoint(string endPoint)
+        {
+            EndPoint = endPoint;
+        }
+        public string getEndPoint()
+        {
+            return EndPoint;
+        }
+        public int getStopAmount()
+        {
+            return StopAmount;
+        }
+        public void setStopAmount(int stopAmount)
+        {
+            StopAmount = stopAmount;
+        } 
         public void SetNewEndPoint(string endPoint, int stopAmount)
         {
             StartPoint = EndPoint;

@@ -4,9 +4,9 @@ namespace Classes
 {
     public class Car: Vehicle
     {
-        public string Color { get; set; }
-        public string BodyType { get; set; }
-        public string Transmission { get; set; }
+        public string Color;
+        public string BodyType;
+        public string Transmission;
 
         public Car(
             DateTime createdAt,
@@ -17,11 +17,34 @@ namespace Classes
             string color,
             string bodyType,
             string transmission
-            ) : base(createdAt, name, enginePower, seatsNumber, vin)
+        ) : base(createdAt, name, enginePower, seatsNumber, vin)
         {
             Color = color;
             BodyType = bodyType;
             Transmission = transmission;
+        }
+        public void setColor(string color)
+        {
+            Color = color;
+        }
+        public string getColor()
+        {
+            return Color;
+        }
+        public void getBodyType(string bodyType) {
+            BodyType = bodyType;
+        }
+        public string setBodyType()
+        {
+            return BodyType;
+        }
+        public void getTransmission(string transmission)
+        {
+            Transmission = transmission;
+        }
+        public string setTransmission()
+        {
+            return Transmission;
         }
         
         public override string ToString()
